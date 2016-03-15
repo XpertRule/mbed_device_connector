@@ -6,32 +6,57 @@ npm install
 
 n.b. Requires node.js and npm to be installed
 
-
-
 # API
 
-## Get resource value
+### Get resources (GET)
 
-/<endpoint>/<resource uri>/											GET
+Url call:
+```sh
+/resources/
+```
 
-return example: {"status":"OK","value":"23","age":5718}
+Return example:
+```sh
+[{"name":"ResourceLED","uri":"a0c50f17-62a8-4dcc-8e7b-bb147cb53b50/Test/0/LED"}]
+```
 
-## Set resource value
+### Get resource value (GET)
 
-/<enpoint>/<resource uri>/											PUT
+Url call:
+```sh
+/<endpoint>/<resource uri>/
+```
 
-## Get resource history
+Return example:
+```sh
+{"status":"OK","value":"23","age":5718}
+```
 
-/history/<enpoint>/<resource uri>/?parameter=value					GET
+### Set resource value (PUT)
 
-### Parameter values
+Url call:
+```sh
+/<enpoint>/<resource uri>/
+```
 
-limit					(integer)				limits the number of items returned
-sort					(asc,1,desc,-1)			orders the items in reference to _id
-starttimestamp			(timestamp)				timestamp to start select
-endtimestamp			(timestamp)				timestamp to stop select
-days					(integer)				number of days to select depending on set startday and endday
-startday				(integer)				number of days ago to start select
-endday					(integer)				number of days ago to end select
+### Get resource history (GET)
 
-return example: [{"endpoint":"a0c50f17-62a8-4dcc-8e7b-bb147cb53b50","resource":"/Test/0/P","value":"23","timestamp":1454081050888,"_id":2519}]
+Url call:
+```sh
+/history/<enpoint>/<resource uri>/?parameter=value
+```
+
+#### Parameter values
+
+ * limit (integer) - limits the number of items returned
+ * sort (asc,1,desc,-1) - orders the items in reference to _id
+ * starttimestamp (timestamp) - timestamp to start select
+ * endtimestamp (timestamp) - timestamp to stop select
+ * days (integer) - number of days to select depending on set startday and endday
+ * startday (integer) - number of days ago to start select
+ * endday (integer) - number of days ago to end select
+
+Return example: 
+```sh
+[{"endpoint":"a0c50f17-62a8-4dcc-8e7b-bb147cb53b50","resource":"/Test/0/P","value":"23","timestamp":1454081050888,"_id":2519}]
+```

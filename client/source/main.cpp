@@ -30,11 +30,7 @@
 
 #include "mbed-drivers/mbed.h"
 
-//extern "C" void mbed_reset();
-
 using namespace mbed::util;
-
-//Serial output(USBTX, USBRX);
 
 //Select binding mode: UDP or TCP
 M2MInterface::BindingMode SOCKET_MODE = M2MInterface::UDP;
@@ -52,7 +48,6 @@ const String &SERIAL_NUMBER = "12345";
 
 const uint8_t STATIC_VALUE[] = "XpertRule Rules";
 
-//static DigitalOut       led(LED1);
 static DigitalOut       ledr(LED1);
 static DigitalOut       ledg(LED2);
 static DigitalOut       ledb(LED3);
@@ -284,7 +279,6 @@ public:
 
                     char *rawval = (char *) res->value();
     
-                    //char zero[1] = "0";
                     ledr = rawval[0] == '0' ? true : false;
                     ledg = rawval[1] == '0' ? true : false;
                     ledb = rawval[2] == '0' ? true : false;

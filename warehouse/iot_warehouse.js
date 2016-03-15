@@ -647,7 +647,7 @@ var xr_server = http.createServer(function(request, response) {
 
         urlarray.splice(0, 1);    //remove first blank
 
-        var endpointuri, resourceuri;
+        var endpointuri, resourceuri, i, ii, endpoint, resource;
 
         //resource
         if (urlarray.length >= 3 && urlarray[0] == "history") {   //catch history tag
@@ -725,6 +725,20 @@ var xr_server = http.createServer(function(request, response) {
                 response.write(JSON.stringify(items));
                 response.end();
             });
+        } else if (urlarray.length >= 1 && urlarray[0] == "resources") {   //catch resources (list) request
+            var resources = [];
+            for (i = 0; i < endpoints.length; i++) {
+                endpoint = endpoints[i];
+                for (ii = 0; ii < endpoint.resources.length; ii++) {
+                    resource = endpoint.resources[ii];
+                    if (resource.obs) {
+                        resources.push({name: resource.rt, uri: endpoint.name + resource.uri});
+                    }
+                }
+            }
+            response.writeHead(200, {"content-type": "text/plain"});
+            response.write(JSON.stringify(resources));
+            response.end();
         } else if (urlarray.length >= 2) {  // getting resource from ram or setting resource value
             endpointuri = urlarray[0];
             urlarray.splice(0, 1);    // remove endpoint
@@ -736,14 +750,14 @@ var xr_server = http.createServer(function(request, response) {
             var foundendpoint = false;
             var foundresource = false;
 
-            for (var i = 0; i < endpoints.length; i++) {
-                var endpoint = endpoints[i];
+            for (i = 0; i < endpoints.length; i++) {
+                endpoint = endpoints[i];
 
                 if (endpointuri.indexOf(endpoint.name) >= 0) {
                     foundendpoint = true;
 
-                    for (var ii = 0; ii < endpoint.resources.length; ii++) {
-                        var resource = endpoint.resources[ii];
+                    for (ii = 0; ii < endpoint.resources.length; ii++) {
+                        resource = endpoint.resources[ii];
 
                         if (resourceuri.indexOf(resource.uri) >= 0) {
                             foundresource = true;

@@ -1,5 +1,4 @@
-Installation
-------------
+# Installation
 
 From this folder, simply type...
 
@@ -9,28 +8,24 @@ n.b. Requires node.js and npm to be installed
 
 
 
-//API
-//////////////////////////////////////////////////////////////////////////////////////////
+# API
 
-//Get resource value
-/////////////////////////////////////////////
+## Get resource value
 
 /<endpoint>/<resource uri>/											GET
 
 return example: {"status":"OK","value":"23","age":5718}
 
-//Set resource value
-/////////////////////////////////////////////
+## Set resource value
 
 /<enpoint>/<resource uri>/											PUT
 
-//Get resource history
-/////////////////////////////////////////////
+## Get resource history
 
 /history/<enpoint>/<resource uri>/?parameter=value					GET
 
-Parameter values
-/////////////////////
+### Parameter values
+
 limit					(integer)				limits the number of items returned
 sort					(asc,1,desc,-1)			orders the items in reference to _id
 starttimestamp			(timestamp)				timestamp to start select

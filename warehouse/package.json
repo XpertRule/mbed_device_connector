@@ -1,0 +1,20 @@
+{
+  "name": "xpertrule_mbed_warehouse",
+  "version": "1.0.0",
+  "description": "XpertRule IoT warehouse for mbed Device Connector",
+  "main": "iot_warehouse.js",
+  "dependencies": {
+    "tingodb": "*"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "node iot_warehouse.js"
+  },
+  "author": "XpertRule Software Ltd <info@xpertrule.com> (http://xpertrule.com)",
+  "homepage": "http://xpertrule.com",
+  "license": "GPL-2.0+",
+  "repository": {
+    "type" : "git",
+    "url" : "https://github.com/XpertRule/mbed_device_connector"
+  }
+}

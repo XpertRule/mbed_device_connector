@@ -1,3 +1,14 @@
+Installation
+------------
+
+From this folder, simply type...
+
+npm install
+
+n.b. Requires node.js and npm to be installed
+
+
+
 //API
 //////////////////////////////////////////////////////////////////////////////////////////
 

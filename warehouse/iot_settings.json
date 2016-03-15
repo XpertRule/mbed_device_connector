@@ -1,0 +1,10 @@
+{
+    "url": "dm.xpertrule.com",
+
+    "ds_port": 8000,
+    "ds_url": "api.connector.mbed.com",
+    "ds_auth": "HGX93VVLX77YQSLBO3VQWX8EYMZ16RHQE3O4ACDF",
+	"poll_time": 30,
+
+    "xr_port": 8001
+}

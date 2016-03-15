@@ -20,8 +20,8 @@ var settings = {
 };
 
 // read local file and overwrite as appropriate
-if (fs.existsSync("./iot_settings.json")) {
-    var data = fs.readFileSync("./iot_settings.json", "utf8");
+if (fs.existsSync("./settings.json")) {
+    var data = fs.readFileSync("./settings.json", "utf8");
     var newSettings = JSON.parse(data);
     for (var aProp in newSettings) {
         settings[aProp] = newSettings[aProp];
@@ -210,6 +210,7 @@ var callback_server = http.createServer(function(request, response) {
 
 var endpoints = [];
 function getEndpoints() {
+    console.log("Retrieving endpoints...");
     var rq = https.request(
         {
             host    : settings.ds_url,
@@ -220,13 +221,13 @@ function getEndpoints() {
             }
         },
         function(res) {
-            console.log("Endpoints Status: " + res.statusCode);
+            console.log("Endpoint retrieval status: " + res.statusCode);
             var body = "";
             res.on("data", function(chunk) {
                 body += chunk;
             });
             res.on("end", function() {
-                console.log(body);
+                console.log("Endpoint retrieval body: " + body);
                 endpoints = JSON.parse(body);
 
                 for (var i = 0; i < endpoints.length; i++) {

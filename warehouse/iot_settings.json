@@ -1,10 +1,10 @@
 {
-    "url": "dm.xpertrule.com",
+    "url": "iot.xpertrule.com",
 
-    "ds_port": 8000,
+    "ds_port": 1234,
     "ds_url": "api.connector.mbed.com",
-    "ds_auth": "HGX93VVLX77YQSLBO3VQWX8EYMZ16RHQE3O4ACDF",
+    "ds_auth": "Your ARM mbed device connector auth key goes here",
 	"poll_time": 30,
 
-    "xr_port": 8001
+    "xr_port": 5678
 }

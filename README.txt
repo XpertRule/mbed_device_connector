@@ -6,6 +6,6 @@ Individual componants live in the following folders...
 
 The node.js server componant for reading and writing resource values. Periodic reads are also stored and historic values can be accessed via the API
 
-/device
+/client
 
 mbed OS code for the FRDM-K64F developer board

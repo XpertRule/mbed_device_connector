@@ -20,12 +20,17 @@ Edit the settings.json file. The default file looks like this...
 }
 ```
 ## Setting Values
-url: The publicly accessable url (or ip address) for the server containing the XpertRule warehouse
-ds_port: The publicly accessable port used to listed for mbed Device Server responses
-ds_url: The url for the mbed Device Server (in this example, we will use the hosted mbed Device Connector portal)
-ds_auth: Your mbed Device Server authorization key. You can retrieve this from your https://connector.mbed.com/#home account
-poll_time: The number of SECONDS between polling for endpoint/resource values
-xr_port: The port to listed for XpertRule Warehouse API requests. This is used in the XpertRule Web Author for IoT integration
+**url**: The publicly accessable url (or ip address) for the server containing the XpertRule warehouse
+
+**ds_port**: The publicly accessable port used to listed for mbed Device Server responses
+
+**ds_url**: The url for the mbed Device Server (in this example, we will use the hosted mbed Device Connector portal)
+
+**ds_auth**: Your mbed Device Server authorization key. You can retrieve this from your [mbed Devide Connector](https://connector.mbed.com/#home) account
+
+**poll_time**: The number of SECONDS between polling for endpoint/resource values
+
+**xr_port**: The port to listed for XpertRule Warehouse API requests. This is used in the XpertRule Web Author for IoT integration
 
 # API
 

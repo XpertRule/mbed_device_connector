@@ -1,4 +1,4 @@
-# XpertRule MBed Device Connector
+# XpertRule mbed Device Connector
 Sample code for integrating XpertRule Web Author with ARM mbed Device Connector
 
 Individual componants live in the following folders...
@@ -9,4 +9,4 @@ The node.js server componant for reading and writing resource values. Periodic r
 
 ### /client
 
-mbed OS code for the FRDM-K64F developer board
+mbed OS / mbed Client code for the FRDM-K64F developer board
